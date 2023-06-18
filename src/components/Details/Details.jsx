@@ -7,8 +7,8 @@ function Details () {
 //getting genre and details reducers from index store
     const history = useHistory();
     const dispatch = useDispatch();
-    detailsReducer = useSelector(store => store.details);
-    genresReducer = useSelector(store => store.genres);
+    const detailsReducer = useSelector(store => store.details);
+    const genresReducer = useSelector(store => store.genres);
 
     //
     useEffect(() => {
@@ -33,7 +33,7 @@ function Details () {
             ))}
             <h2>{detailsReducer.title}</h2>
             <img src={detailsReducer.poster}></img>
-            <h1>{detailsReducer.description}</h1>
+            <h3>{detailsReducer.description}</h3>
         </div>
         </>
     )

@@ -7,27 +7,29 @@ function MovieList() {
 
     const dispatch = useDispatch();
     const movies = useSelector(store => store.movies);
-    history = useHistory()
+    const history = useHistory()
 
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
-
-   const handleClick = () => {
-    dispatch({type: 'SET_DETAILS', payload: movies})
+//we passed the movie parameter so button knows which
+//movie we are clicking on 
+   const handleClick = (movie) => {
+    dispatch({type: 'SET_DETAILS', payload: movie})
     history.push('/details')
    }
 
     return (
         <main>
             <h1>MovieList</h1>
-            <button onClick={handleClick}>details</button>
             <section className="movies">
                 {movies.map(movie => {
                     return (
                         <div key={movie.id} >
                             <h3>{movie.title}</h3>
                             <img src={movie.poster} alt={movie.title}/>
+                            <button onClick={() => handleClick(movie)}>details</button>
+                            <button onClick={handleClick}>details</button>
                         </div>
                     );
                 })}
