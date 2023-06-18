@@ -29,7 +29,6 @@ function MovieList() {
                             <h3>{movie.title}</h3>
                             <img src={movie.poster} alt={movie.title}/>
                             <button onClick={() => handleClick(movie)}>details</button>
-                            <button onClick={handleClick}>details</button>
                         </div>
                     );
                 })}

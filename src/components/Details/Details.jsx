@@ -33,7 +33,7 @@ function Details () {
             ))}
             <h2>{detailsReducer.title}</h2>
             <img src={detailsReducer.poster}></img>
-            <h3>{detailsReducer.description}</h3>
+            <h3>Description:{detailsReducer.description}</h3>
         </div>
         </>
     )
