@@ -29,6 +29,13 @@ function* fetchAllMovies() {
         
 }
 
+// //get the details of movies
+// function fetchMovieDetails() {
+//     try {
+//         const movieDetailResponse = yield axios.get('')
+//     }
+// }
+
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
 
@@ -51,12 +58,22 @@ const genres = (state = [], action) => {
             return state;
     }
 }
+//details
+const details = (state = []. action) => {
+    switch(action.type) {
+        case 'GET_DETAILS':
+        return action.payload;
+        default:
+            return state;
+    }
+}
 
 // Create one store that all components can use
 const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
+        details
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
