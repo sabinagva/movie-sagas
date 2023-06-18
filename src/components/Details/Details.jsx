@@ -12,12 +12,12 @@ function Details () {
 
     //
     useEffect(() => {
-        dispatch({type: 'GET_DETAILS', payload: detailsReducer.id})
+        dispatch({type: 'GET_GENRES', payload: detailsReducer.id})
     }, [])
 
     //this button enable user to go back to movie list
    const handleClick = () => {
-    history.pushState('/')
+    history.push('/')
    }
 
    //bellow we will be rendering movie genres and description to dom
