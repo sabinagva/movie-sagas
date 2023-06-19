@@ -25,7 +25,7 @@ function Details () {
    //bellow we will be rendering movie genres and description to dom
     return (
         <>
-        <button onClick={handleClick}>Movie list</button>
+        {/* <button onClick={handleClick}>Movie list</button> */}
         <div>
             {genresReducer.map((genre) => (
                 <p>
