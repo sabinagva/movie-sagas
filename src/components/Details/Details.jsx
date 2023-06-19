@@ -17,8 +17,9 @@ function Details () {
         console.log('detailReducer.id is', detailsReducer.id)
     }, [])
 
-    //this button enable user to go back to movie list
-//    const handleClick = () => {
+   // this button enable user to go back to movie list
+//    const handleRefresh = (event) => {
+//     event.preventDefault();
 //     history.push('/')
 //    }
 
