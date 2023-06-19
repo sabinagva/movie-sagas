@@ -16,6 +16,8 @@ function MovieList() {
 //movie we are clicking on 
    const handleClick = (movie) => {
     dispatch({type: 'SET_DETAILS', payload: movie})
+    //dispatch({type: 'GET_GENRES', payload: movie})
+
     history.push('/details')
    }
 

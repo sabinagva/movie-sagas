@@ -8,11 +8,13 @@ function Details () {
     const history = useHistory();
     const dispatch = useDispatch();
     const detailsReducer = useSelector(store => store.details);
+    console.log('detailsReducer is', detailsReducer)
     const genresReducer = useSelector(store => store.genres);
 
     //
     useEffect(() => {
         dispatch({type: 'GET_GENRES', payload: detailsReducer.id})
+        console.log('detailReducer.id is', detailsReducer.id)
     }, [])
 
     //this button enable user to go back to movie list
