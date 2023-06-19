@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
-
+import './Details.css'
 
 function Details () {
 //getting genre and details reducers from index store
@@ -18,15 +18,16 @@ function Details () {
     }, [])
 
     //this button enable user to go back to movie list
-   const handleClick = () => {
-    history.push('/')
-   }
+//    const handleClick = () => {
+//     history.push('/')
+//    }
 
    //bellow we will be rendering movie genres and description to dom
     return (
         <>
         {/* <button onClick={handleClick}>Movie list</button> */}
-        <div>
+        <div className="card">
+            <b>Genre:</b>
             {genresReducer.map((genre) => (
                 <p>
                     {genre.name}
@@ -35,7 +36,7 @@ function Details () {
             ))}
             <h2>{detailsReducer.title}</h2>
             <img src={detailsReducer.poster}></img>
-            <h3>Description:{detailsReducer.description}</h3>
+            <h3><b>Description:</b>{detailsReducer.description}</h3>
         </div>
         </>
     )
