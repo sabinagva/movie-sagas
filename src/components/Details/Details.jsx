@@ -24,23 +24,24 @@ function Details () {
 //    }
 
    //bellow we will be rendering movie genres and description to dom
-    return (
-        <>
-        {/* <button onClick={handleClick}>Movie list</button> */}
-        <div className="card">
-            <b>Genre:</b>
-            {genresReducer.map((genre) => (
-                <p>
-                    {genre.name}
-                </p>
-
-            ))}
-            <h2>{detailsReducer.title}</h2>
-            <img src={detailsReducer.poster}></img>
-            <h3><b>Description:</b>{detailsReducer.description}</h3>
-        </div>
-        </>
-    )
+   return (
+    <div className="cardContainer">
+      {/* <button onClick={handleClick}>Movie list</button> */}
+      <div className="card">
+        <b>Genre:</b>
+        {genresReducer.map((genre) => (
+          <p>{genre.name}</p>
+        ))}
+        <h2>{detailsReducer.title}</h2>
+        <img src={detailsReducer.poster} alt="Movie Poster" />
+        <h3>
+          <b>Description:</b>
+          {detailsReducer.description}
+        </h3>
+      </div>
+    </div>
+  );
+  
 
 }
 
