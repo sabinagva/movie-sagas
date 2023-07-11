@@ -1,11 +1,21 @@
-# Project Name
+# Movie Saga App
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+This is a movie application built using React, Redux, SQL, and CSS. It allows users to view movie images and titles on the DOM. When a movie is clicked, additional details such as the genre name, picture, and summary are displayed.
 
-## Description
+## Technologies Used
 
-Your project description goes here. What problem did you solve? How did you solve it?
+- React: A JavaScript library for building user interfaces.
+- Redux: A predictable state container for managing application state.
+- SQL: A language used for managing relational databases.
+- CSS: Cascading Style Sheets for styling the application.
 
-Functionality of the project is being able to click on the movie from movie list and go into a description of the clicked movie
+## Installation
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+Clone the repository: git clone  <repository-url>
+Navigate to the project directory: cd movie-saga-project
+Install dependencies: npm install
+Set up the database: [Instructions for setting up the database]
+Start the development server: npm start
+Open your browser and visit: http://localhost:3000
+
+
