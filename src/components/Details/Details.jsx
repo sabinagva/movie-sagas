@@ -1,32 +1,25 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux"
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
-import './Details.css'
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import "./Details.css";
 
-function Details () {
-//getting genre and details reducers from index store
-    const history = useHistory();
-    const dispatch = useDispatch();
-    const detailsReducer = useSelector(store => store.details);
-    console.log('detailsReducer is', detailsReducer)
-    const genresReducer = useSelector(store => store.genres);
+function Details() {
+  //getting genre and details reducers from index store
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const detailsReducer = useSelector((store) => store.details);
+  console.log("detailsReducer is", detailsReducer);
+  const genresReducer = useSelector((store) => store.genres);
 
-    //
-    useEffect(() => {
-        dispatch({type: 'GET_GENRES', payload: detailsReducer.id})
-        console.log('detailReducer.id is', detailsReducer.id)
-    }, [])
+  //
+  useEffect(() => {
+    dispatch({ type: "GET_GENRES", payload: detailsReducer.id });
+    console.log("detailReducer.id is", detailsReducer.id);
+  }, []);
 
-   // this button enable user to go back to movie list
-//    const handleRefresh = (event) => {
-//     event.preventDefault();
-//     history.push('/')
-//    }
-
-   //bellow we will be rendering movie genres and description to dom
-   return (
+  //bellow we will be rendering movie genres and description to dom
+  return (
     <div className="cardContainer">
-      {/* <button onClick={handleClick}>Movie list</button> */}
       <div className="card">
         <b>Genre:</b>
         {genresReducer.map((genre) => (
@@ -41,8 +34,6 @@ function Details () {
       </div>
     </div>
   );
-  
-
 }
 
-export default Details
+export default Details;

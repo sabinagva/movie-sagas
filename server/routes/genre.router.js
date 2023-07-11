@@ -1,8 +1,8 @@
-const express = require('express');
-const pool = require('../modules/pool');
+const express = require("express");
+const pool = require("../modules/pool");
 const router = express.Router();
 
-router.get('/:id', (req, res) => {
+router.get("/:id", (req, res) => {
   const movieId = req.params.id;
   const query = `
     SELECT m.title, m.description, m.poster, g.name FROM movies AS m
@@ -17,7 +17,7 @@ router.get('/:id', (req, res) => {
       res.send(result.rows);
     })
     .catch((error) => {
-      console.log('Error getting genres from the database:', error);
+      console.log("Error getting genres from the database:", error);
       res.status(500).send(error.message);
     });
 });
